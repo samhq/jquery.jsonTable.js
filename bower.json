@@ -1,0 +1,26 @@
+{
+  "name": "jquery.jsonTable.js",
+  "main": "jquery.jsonTable.js",
+  "homepage": "https://github.com/samveloper/jquery.jsonTable.js",
+  "authors": [
+    "Samiul Hoque <samiul@samveloper.com>"
+  ],
+  "description": "A jQuery plugin to convert json object to a html table",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "jquery",
+    "json",
+    "html",
+    "table"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

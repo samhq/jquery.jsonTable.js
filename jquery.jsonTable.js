@@ -78,7 +78,6 @@
         var str = '<table class="' + theme + '">';
         str += '<tbody>';
 
-
         for (var i = 0; i < array.length; i++) {
             var row = 0;
             for (var index in keys) {
@@ -121,23 +120,24 @@
             enableHeader: true,
         }, options);
 
-        var el = this;
-        var content = $.trim(el.html());
-        var json;
-        var tableView;
+        return this.each(function() {
+            var el = $(this);
+            var content = $.trim(el.html());
+            var json;
+            var tableView;
 
-        if(content.length > 0) {
-            if (json = JSON.parse(content)) {
-                if (detail == 'detail') {
-                    tableView = CreateDetailView(json, settings.theme, settings.enableHeader);
+            if(content.length > 0) {
+                if (json = JSON.parse(content)) {
+                    if (detail == 'detail') {
+                        tableView = CreateDetailView(json, settings.theme, settings.enableHeader);
+                    } else {
+                        tableView = CreateTableView(json, settings.theme, settings.enableHeader);
+                    }
+                    el.html(tableView);
                 } else {
-                    tableView = CreateTableView(json, settings.theme, settings.enableHeader);
+                    console.log('Json Parsing Error!')
                 }
-                this.html(tableView);
-            } else {
-                console.log('Json Parsing Error!')
             }
-        }
-        return this;
+        });
     };
 }(jQuery));
